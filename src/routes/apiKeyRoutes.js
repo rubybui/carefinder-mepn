@@ -16,7 +16,12 @@ router.get('/', (req, res) => {
     return res.redirect('/auth/login');
   }
 
-  ApiKey.find({ username: currentUser.username })
+  // Determine the query based on the user's role
+  const query = currentUser.role === 'admin' 
+    ? {} // Admins see all API keys
+    : { username: currentUser.username }; // Non-admins see only their own keys
+
+  ApiKey.find(query)
     .then((keys) => {
       const userLevel = currentUser.role === 'admin' ? 1 : 2;
       res.render('apikeys', { keys, user: { ...currentUser, level: userLevel } });
