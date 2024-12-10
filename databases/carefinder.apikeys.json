@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "6756d3289a9344a554cab1a1"
+  },
+  "username": "miumiumatnet",
+  "apikey": "5db5709667b5b0bec0cd43026e6b2e5bc36210383f3c5a60baefa8f25c52d97f",
+  "level": 2,
+  "createdAt": {
+    "$date": "2024-12-09T11:23:20.904Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6756d5cf66a4d783308bad01"
+  },
+  "username": "miumiumatnet",
+  "apikey": "bbb5709667b5b0bec0cd43026e6b2e5bc36210383f3c5a60baefa8f25c52d97f",
+  "level": 1,
+  "createdAt": {
+    "$date": "2024-12-09T11:23:20.904Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6756d63f66a4d783308bad06"
+  },
+  "username": "miumiumatnet-admin",
+  "apikey": "ddb5709667b5b0bec0cd43026e6b2e5bc36210383f3c5a60baefa8f25c52d97f",
+  "level": 1,
+  "createdAt": {
+    "$date": "2024-12-09T11:23:20.904Z"
+  },
+  "__v": 0
+}]

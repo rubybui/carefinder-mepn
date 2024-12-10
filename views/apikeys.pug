@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title API Keys
+  body
+    h1 API Keys
+
+    //- Display existing API keys
+    if keys.length > 0
+      ul
+        each key in keys
+          li
+            | #{key.username}: #{key.apikey} (Level: #{key.level})
+            form(action=`/apikeys/${key._id}` method="POST" style="display:inline")
+              input(type="hidden" name="_method" value="DELETE")
+              button(type="submit") Delete
+    else
+      p No API keys found.
+
+    //- Form to create a new API key
+    h2 Create New API Key
+    form(action="/apikeys" method="POST")
+      input(type="hidden" name="username" value=user.username)
+      input(type="hidden" name="level" value=user.level) 
+      div
+        button(type="submit") Create API Key
+
+    //- Logout link
+    a(href="/auth/logout") Logout

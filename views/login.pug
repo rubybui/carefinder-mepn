@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Login
+  body
+    h1 Login
+    if error
+      p.error(style="color: red") #{error}
+    form(action="/auth/login" method="POST")
+      div
+        label(for="username") Username:
+        input(type="text" name="username" id="username" required)
+      div
+        label(for="password") Password:
+        input(type="password" name="password" id="password" required)
+      div
+        button(type="submit") Login

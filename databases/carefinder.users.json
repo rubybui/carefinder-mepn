@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "6756cac29d607e74ca9ba95e"
+  },
+  "username": "miumiumatnet",
+  "email": "bichnguyen.notme@gmail.com",
+  "role": "user",
+  "password": "$2b$10$NW5JjNForkYfhWTwG9vRBO3UMVZz/8UazAogy33sXmU2dTCGUr.0O",
+  "provider": "manual",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6756d62a66a4d783308bad04"
+  },
+  "username": "miumiumatnet-admin",
+  "email": "bichnguyen.notme_admin@gmail.com",
+  "role": "admin",
+  "password": "$2b$10$NW5JjNForkYfhWTwG9vRBO3UMVZz/8UazAogy33sXmU2dTCGUr.0O",
+  "provider": "manual",
+  "__v": 0
+}]
