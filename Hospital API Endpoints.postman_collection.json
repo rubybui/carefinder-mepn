@@ -1,0 +1,825 @@
+{
+	"info": {
+		"_postman_id": "e4c287d9-a985-4bfc-8dd0-d51a2632444f",
+		"name": "Hospital API Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40301561"
+	},
+	"item": [
+		{
+			"name": "/hospitals - GET all hospitals",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - POST create hospital",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"provider_id\": \"010008\", \"hospital_name\": \"CRENSHAW COMMUNITY HOSPITAL\", \"address\": \"101 HOSPITAL CIRCLE\", \"city\": \"LUVERNE\", \"state\": \"AL\", \"zip_code\": \"36049\", \"county_name\": \"CRENSHAW\", \"phone_number\": {\"_phone_number\": \"3343353374\"}, \"hospital_type\": \"Acute Care Hospitals\", \"hospital_ownership\": \"Proprietary\", \"emergency_services\": true, \"location\": {\"_human_address\": \"{\\\"address\\\":\\\"101 HOSPITAL CIRCLE\\\",\\\"city\\\":\\\"LUVERNE\\\",\\\"state\\\":\\\"AL\\\",\\\"zip\\\":\\\"36049\\\"}\", \"_latitude\": 31.69311635, \"_longitude\": -86.26549483099967, \"_needs_recoding\": false}, \"__id\": \"5\", \"__uuid\": \"E7F0426D-98A4-4074-8716-C70929908CDD\", \"__position\": \"5\", \"__address\": \"http://data.medicare.gov/resource/xubh-q36u/5\"}"
+				},
+				"url": {
+					"raw": "localhost:3000/hospitals",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - DELETE all hospitals",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - GET by provider ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?providerid=010001",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "providerid",
+							"value": "010001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - PUT update by provider ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"hospital_name\": \"CHANGED SOUTHEAST ALABAMA MEDICAL CENTER\", \"address\": \"1108 ROSS CLARK CIRCLE\", \"city\": \"DOTHAN\", \"state\": \"AL\", \"zip_code\": \"36301\", \"county_name\": \"HOUSTON\", \"hospital_type\": \"Acute Care Hospitals\", \"hospital_ownership\": \"Government - Hospital District or Authority\", \"emergency_services\": true}"
+				},
+				"url": {
+					"raw": "localhost:3000/hospitals?providerid=010001",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "providerid",
+							"value": "010001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - DELETE by provider ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?providerid=010001",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "providerid",
+							"value": "010001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - GET by city",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?city=DOTHAN",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "DOTHAN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete hospitals by city",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?city=DOTHAN",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "DOTHAN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - GET by state",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?state=AL",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "AL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - Delete by state",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?state=AL",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "AL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - GET by county",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?county=HOUSTON",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "county",
+							"value": "HOUSTON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - Delete by county",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?county=HOUSTON",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "county",
+							"value": "HOUSTON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - GET by name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?name=PROVIDENCE ALASKA MEDICAL CENTER",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "PROVIDENCE ALASKA MEDICAL CENTER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - Delete by name",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?name=PROVIDENCE ALASKA MEDICAL CENTER",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "PROVIDENCE ALASKA MEDICAL CENTER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - GET by type",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?type=Acute Care Hospitals",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Acute Care Hospitals"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - Delete by type",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?type=Acute Care Hospitals",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Acute Care Hospitals"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - Delete by ownership",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?ownership=Government - Hospital District or Authority",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "ownership",
+							"value": "Government - Hospital District or Authority"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - GET by ownership Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?ownership=Government - Hospital District or Authority",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "ownership",
+							"value": "Government - Hospital District or Authority"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - GET by emergency",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?emergency=true",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "emergency",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - DELETE by emergency",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?emergency=true",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "emergency",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - GET by lat",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?lat=33.33899688900044",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "33.33899688900044"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - GET by lon",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals?lon=-118.33088830799971",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals"
+					],
+					"query": [
+						{
+							"key": "lon",
+							"value": "-118.33088830799971"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get hospitals by distance",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "domonique.t48getc5wv-_lfnL7j7L/twqFN-Tw6uJ",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals/radius?lat=33.50314015000049&lon=-86.80242858299965&dist=3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals",
+						"radius"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "33.50314015000049"
+						},
+						{
+							"key": "lon",
+							"value": "-86.80242858299965"
+						},
+						{
+							"key": "dist",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/hospitals - Delete by dist",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "domonique.t48getc5wv-_lfnL7j7L/twqFN-Tw6uJ",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "<YOUR_API_KEY>",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/hospitals/radius?lat=33.50314015000049&lon=-86.80242858299965&dist=40",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"hospitals",
+						"radius"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "33.50314015000049"
+						},
+						{
+							"key": "lon",
+							"value": "-86.80242858299965"
+						},
+						{
+							"key": "dist",
+							"value": "40"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "ddb5709667b5b0bec0cd43026e6b2e5bc36210383f3c5a60baefa8f25c52d97f",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "x-api-key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
