@@ -11,8 +11,7 @@ html
         each key in keys
           li
             | #{key.username}: #{key.apikey} (Level: #{key.level})
-            form(action=`/apikeys/${key._id}` method="POST" style="display:inline")
-              input(type="hidden" name="_method" value="DELETE")
+            form(action=`/apikeys/${key._id}?_method=DELETE` method="POST" style="display:inline")
               button(type="submit") Delete
     else
       p No API keys found.

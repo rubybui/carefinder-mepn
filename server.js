@@ -4,22 +4,25 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser'); // Add this
+const app = express();
+app.use(methodOverride('_method'));
+
 const authRoutes = require('./src/routes/authRoutes');
 const apiKeyRoutes = require('./src/routes/apiKeyRoutes');
 const hospitalRoutes = require('./src/routes/hospitalRoutes');
-
-const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser()); // Enable cookie parsing
 app.set('view engine', 'pug');
+
 app.use((req, res, next) => {
   console.log(`HTTP Method: ${req.method}, URL: ${req.url}`);
+  console.log(`Raw Body: ${JSON.stringify(req.body)}`);
   next();
 });
 
-app.use(methodOverride('_method'));
+
 
 // Connect to MongoDB
 mongoose
