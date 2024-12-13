@@ -1,7 +1,7 @@
 const express = require('express');
 const ApiKey = require('../models/ApiKey');
 const cookieParser = require('cookie-parser'); // For parsing cookies
-
+const { generateApiKey } = require('generate-api-key');
 const router = express.Router();
 
 // Middleware to parse cookies
@@ -42,7 +42,11 @@ router.post('/', async (req, res) => {
   }
 
   try {
-    const apikey = require('crypto').randomBytes(32).toString('hex');
+     const apikey = generateApiKey({
+      method: 'string', // Method to generate the key. Options: 'string', 'bytes', 'base32', 'base62', 'uuidv4', 'uuidv5'
+      length: 32,       // Length of the generated key
+      prefix: currentUser.username // Optional prefix (e.g., username)
+    });
     const newKey = new ApiKey({
       username: currentUser.username,
       apikey,

@@ -44,16 +44,16 @@ router.get('/', async (req, res) => {
 // POST /hospitals - Add a new hospital (Admin only)
 router.post('/', isAdmin, async (req, res) => {
     try {
-        console.log("query", query)
+        console.log('Request body:', req.body); // Debug req.body
         const hospital = new Hospital(req.body);
-        console.log("hospitals", hospital)
         await hospital.save();
         res.status(201).json(hospital);
     } catch (err) {
-        console.error('Error creating hospital:', err.errors);
-        res.status(400).json({ error: 'Validation failed', details: err.errors });
+        console.error('Error:', err); // Log the full error
+        res.status(400).json({ error: 'Validation failed', details: err.message });
     }
 });
+
 
 // PUT /hospitals?providerid={number} - Update/Create a hospital resource (Admin Only)
 router.put('/', isAdmin, async (req, res) => {
@@ -112,7 +112,7 @@ const haversineDistance = (lat1, lon1, lat2, lon2) => {
     return R * c; // Distance in kilometers
 };
 
-// GET /hospitals?lat={latitude}&lon={longitude}&dist={distance}
+// GET /hospitals/radius?lat={latitude}&lon={longitude}&dist={distance}
 // Find hospitals within a given radius
 router.get('/radius', async (req, res) => {
     const { lat, lon, dist } = req.query;
@@ -151,7 +151,7 @@ router.get('/radius', async (req, res) => {
     }
 });
 
-// DELETE /hospitals?lat={latitude}&lon={longitude}&dist={distance}
+// DELETE  /hospitals/radius?lat={latitude}&lon={longitude}&dist={distance}
 // Delete hospitals within a given radius (Admin Only)
 router.delete('/radius', isAdmin, async (req, res) => {
     const { lat, lon, dist } = req.query;
