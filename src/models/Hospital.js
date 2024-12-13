@@ -26,8 +26,6 @@ const HospitalSchema = new mongoose.Schema({
   hospital_ownership: { type: String, required: true },
   emergency_services: { type: String, required: true, default: 'false' },
   location: { type: LocationSchema, required: true },
-  __id: { type: String, required: true },
-  __uuid: { type: String, unique: true, required: true },
   __position: { type: String, required: false },
   __address: { type: String, required: true }
 });
